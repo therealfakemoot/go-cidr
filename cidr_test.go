@@ -9,7 +9,6 @@ func TestRange(t *testing.T) {
 		t.Log("starting the big one")
 		ns, err := Range("0.0.0.0/32")
 		if err != nil {
-			t.Logf("error generating range: %s", err)
 			t.Fail()
 		}
 
@@ -17,7 +16,6 @@ func TestRange(t *testing.T) {
 			t.Logf("wrong # of addresses: %d", len(ns))
 			t.Fail()
 		}
-		t.Log("done with the big one")
 	})
 	t.Run("valid ranges", func(t *testing.T) {
 		inputs := []struct {
